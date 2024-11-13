@@ -1,0 +1,58 @@
+﻿{
+    "name": "Contracts.Order",
+    "type": "record",
+    "fields": [
+        {
+            "name": "CreatedAt",
+            "type": "string"
+        },
+        {
+            "name": "Dishes",
+            "type": {
+                "type": "array",
+                "items": {
+                    "name": "Contracts.Dish",
+                    "type": "record",
+                    "fields": [
+                        {
+                            "name": "Cost",
+                            "type": {
+                                "type": "bytes",
+                                "logicalType": "decimal",
+                                "precision": 29,
+                                "scale": 14
+                            }
+                        },
+                        {
+                            "name": "Id",
+                            "type": {
+                                "type": "string",
+                                "logicalType": "uuid"
+                            }
+                        },
+                        {
+                            "name": "Title",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Id",
+            "type": {
+                "type": "string",
+                "logicalType": "uuid"
+            }
+        },
+        {
+            "name": "TotalCost",
+            "type": {
+                "type": "bytes",
+                "logicalType": "decimal",
+                "precision": 29,
+                "scale": 14
+            }
+        }
+    ]
+}
